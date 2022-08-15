@@ -14,6 +14,7 @@ class AsyncBMP180Wrapper {
     Timers _waitingTimer;
     float _altitude;
     bool _waiting;
+    bool _ready;
     uint8_t _step;
     bool _initialized;
     double _lastT, _lastP, _lastP0;
@@ -25,6 +26,7 @@ class AsyncBMP180Wrapper {
     AsyncBMP180Wrapper(float altitude) { _altitude = altitude; }
     void init();
     void process();
+    bool ready();
     float getT();
     float getP();
     float getP0();

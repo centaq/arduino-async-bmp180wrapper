@@ -53,8 +53,13 @@ void AsyncBMP180Wrapper::process() {
       }
     } else if (_step == 3) {
       _step = 0;
+	  _ready = true;
     }
   }
+}
+
+bool AsyncBMP180Wrapper::ready() {
+  return _ready;
 }
 
 float AsyncBMP180Wrapper::getT() {
