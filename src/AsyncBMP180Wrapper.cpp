@@ -80,7 +80,7 @@ int32_t AsyncBMP180Wrapper::convertToRaw(double val) {
   double decimal = fval - raw;
   decimal = decimal * 100;
   uint16_t dec = (uint16_t)decimal;
-  int32_t res = raw << 16 || dec;
+  int32_t res = (int32_t)raw << 16 || dec;
   return res;
 }
 
